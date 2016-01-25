@@ -1,3 +1,14 @@
+<% if @song && @song.errors.any? %>
+  <div>
+    <strong>Hmm, something's not right. Please fix the errors:</strong>
+    <ul>
+      <% @song.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <form method ="post" action="/songs">
   <div>
     <label>Song title:</label>
