@@ -12,7 +12,7 @@ post '/songs' do
   @song = Song.new(
     title: params[:title],
     artist: params[:artist],
-    author: params[:author]
+    username: params[:username]
     )
   if @song.save
     redirect '/songs'

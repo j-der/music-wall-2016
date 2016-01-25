@@ -4,7 +4,7 @@ class AddSongs < ActiveRecord::Migration
       t.string :title
       t.string :artist
       t.string :url
-      t.string :author
+      t.string :username
       t.timestamps
     end
   end

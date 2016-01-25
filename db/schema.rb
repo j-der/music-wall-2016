@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20160125163215) do
     t.string   "title"
     t.string   "artist"
     t.string   "url"
-    t.string   "author"
+    t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
