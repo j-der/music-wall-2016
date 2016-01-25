@@ -9,20 +9,28 @@
   </div>
 <% end %>
 
+<h1>Add a song!</h1>
+<p>Post a song, whether it's your favourite, least favourite, or just the first one you can think of. If you have a link, add it too so others can enjoy the tune.</p>
+
 <form method ="post" action="/songs">
   <div>
     <label>Song title:</label>
-    <input type="text" name="title" placeholder="Song title">
+    <input type="text" name="title" value="<%= @song && @song.title %>" placeholder="Song title">
   </div>
 
   <div>
     <label>Artist:</label>
-    <input type="text" name="artist" placeholder="Artist">
+    <input type="text" name="artist" value="<%= @song && @song.artist %>"placeholder="Artist">
+  </div>
+
+  <div>
+    <label>URL (optional):</label>
+    <input type="text" name="url" value="<%= @song && @song.url %>"placeholder="URL">
   </div>
 
   <div>
     <label>Author:</label>
-    <input type="text" name="author" placeholder="Author">
+    <input type="text" name="author" value="<%= @song && @song.author %>" placeholder="Author">
   </div>
 
   <div>
