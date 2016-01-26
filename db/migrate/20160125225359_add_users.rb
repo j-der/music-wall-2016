@@ -4,6 +4,7 @@ class AddUsers < ActiveRecord::Migration
       t.string :username
       t.string :password
       t.string :songs
+      t.integer :upvotes
     end
   end
 

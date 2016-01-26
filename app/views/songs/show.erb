@@ -1,16 +1,10 @@
-
-<h1>MUSIC WALL 2016</h1>
-
-<a href="/songs/new">Post a song!</a>
-
-<% @songs.each do |song| %>
   <div class="song">
-    <h3><a href="/songs/<%= song.id %>"><%= song.title %></a></h3>
+    <h3><%= song.title %></a></h3>
     <h4>by <%= song.artist %></h4>
     <p>submitted by: <%= song.user.username %> on <%= song.created_at %></p>
 
     <p>upvotes: <%= song.upvotes.count %></p>
-   <!--  <p>Like this song? Vote for it below:</p>
+    <p>Like this song? Vote for it below:</p>
 
     <form method ="POST" action="/upvote" role="form">
       <div class="form-group">
@@ -19,9 +13,6 @@
       <div>
         <button type="submit" class="btn btn-default">VOTE!</button>
       </div>
-    </form> -->
+    </form>
 
   </div>
-<% end %>
-
-

@@ -15,7 +15,8 @@
 <a href="/songs">Back to all songs</a>
 <p></p>
 
-<form method ="post" action="/songs" role="form">
+<form method ="POST" action="/songs" role="form">
+
   <div class="form-group">
     <label>Song title:</label>
     <input class="form-control" type="text" name="title" value="<%= @song && @song.title %>" placeholder="Song title">

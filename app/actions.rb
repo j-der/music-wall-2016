@@ -15,12 +15,17 @@ get '/songs' do
   erb :'songs/index'
 end
 
+get 'songs/:id' do
+  @song = Song.find params[:id]
+  erb :'songs/show'
+end
+
 post '/songs' do
   if current_user
-
     @song = Song.new(
       title:   params[:title],
       artist:  params[:artist],
+      url:     params[:url],
       user:    current_user
       )
     if @song.save
@@ -42,7 +47,7 @@ post '/login' do
   password = params[:password]
 
   user = User.find_by(username: username, password: password)
-  binding.pry
+
   if user
     session[:user_id] = user.id
     redirect '/songs'
@@ -74,4 +79,17 @@ end
 
 get '/songs/new' do
   erb :'songs/new'
+end
+
+post '/upvote' do
+  if current_user
+    @upvote = Upvote.new(
+      song_id:  params[:song_id],
+      user:  current_user
+      )
+    # binding.pry
+    if @upvote.save
+      redirect '/songs'
+    end
+  end
 end
