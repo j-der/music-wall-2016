@@ -7,7 +7,7 @@
   <div class="song">
     <h3><%= song.title %></h3>
     <h4>by <%= song.artist %></h4>
-    <p>submitted by: <%= song.username %> on <%= song.created_at %></p>
+    <p>submitted by: <%= song.user.username %> on <%= song.created_at %></p>
   </div>
 <% end %>
 
