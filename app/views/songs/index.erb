@@ -1,11 +1,12 @@
 
 <h1>MUSIC WALL 2016</h1>
 
-<a href="/songs/new">Post a song!</a>
-
+<strong><a href="/songs/new">Post a song!</a></strong>
+<hr>
+</br>
 <% @songs.each do |song| %>
   <div class="song">
-    <h3><a href="/songs/<%= song.id %>"><%= song.title %></a></h3>
+    <h3><a href="songs/<%= song.id %>"><%= song.title %></a></h3>
     <h4>by <%= song.artist %></h4>
     <p>submitted by: <%= song.user.username %> on <%= song.created_at %></p>
 

@@ -1,18 +1,20 @@
   <div class="song">
-    <h3><%= song.title %></a></h3>
-    <h4>by <%= song.artist %></h4>
-    <p>submitted by: <%= song.user.username %> on <%= song.created_at %></p>
+    <h3><%= @song.title %></a></h3>
+    <h4>by <%= @song.artist %></h4>
+    <p>submitted by: <%= @song.user.username %> on <%= @song.created_at %></p>
 
-    <p>upvotes: <%= song.upvotes.count %></p>
+    <p>upvotes: <%= @song.upvotes.count %></p>
     <p>Like this song? Vote for it below:</p>
 
     <form method ="POST" action="/upvote" role="form">
       <div class="form-group">
-        <input class="form-control" type="hidden" name="song_id" value="<%= song.id %>">
+        <input class="form-control" type="hidden" name="song_id" value="<%= @song.id %>">
       </div>
       <div>
         <button type="submit" class="btn btn-default">VOTE!</button>
       </div>
     </form>
-
   </div>
+
+<hr>
+<strong><a href="/songs">&#60;&#60; Back to all songs</a></strong>
