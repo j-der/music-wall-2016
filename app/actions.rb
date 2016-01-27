@@ -15,8 +15,12 @@ get '/songs' do
   erb :'songs/index'
 end
 
+get '/songs/new' do
+  erb :'songs/new'
+end
+
 get '/songs/:id' do
-  @song = Song.find params[:id]
+  @song = Song.find(params[:id])
   erb :'songs/show'
 end
 
@@ -74,11 +78,7 @@ end
 
 get '/logout' do
   session.delete(:user_id)
-  redirect '/login'
-end
-
-get '/songs/new' do
-  erb :'songs/new'
+  redirect '/'
 end
 
 post '/upvote' do
@@ -87,7 +87,6 @@ post '/upvote' do
       song_id:  params[:song_id],
       user:  current_user
       )
-    # binding.pry
     if @upvote.save
       redirect '/songs'
     end
