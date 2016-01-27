@@ -89,6 +89,8 @@ post '/upvote' do
       )
     if @upvote.save
       redirect '/songs'
+    else
+      erb :'/songs/upvote_error'
     end
   end
 end

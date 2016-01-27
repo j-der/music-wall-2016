@@ -1,0 +1,11 @@
+<% if @upvote && @upvote.errors.any? %>
+  <div>
+    <strong>Hmm, something's not right.</strong>
+    <ul>
+      <% @upvote.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    <strong><a href="/songs">&#60;&#60; Back to all songs</a></strong>
+  </div>
+<% end %>
